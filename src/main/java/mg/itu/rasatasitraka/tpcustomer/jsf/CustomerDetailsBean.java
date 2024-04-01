@@ -8,8 +8,11 @@ import jakarta.inject.Named;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import java.io.Serializable;
+import java.util.List;
 import mg.itu.rasatasitraka.tpcustomer.entity.Customer;
+import mg.itu.rasatasitraka.tpcustomer.entity.Discount;
 import mg.itu.rasatasitraka.tpcustomer.service.CustomerManager;
+import mg.itu.rasatasitraka.tpcustomer.service.DiscountManager;
 
 /**
  *
@@ -22,14 +25,17 @@ public class CustomerDetailsBean implements Serializable {
     private int idCustomer;
     private Customer customer;
 
+    @Inject
+    private CustomerManager customerManager;
+
+    @Inject
+    private DiscountManager discountManager;
+
     /**
      * Creates a new instance of CustomerDetailsBean
      */
     public CustomerDetailsBean() {
     }
-
-    @Inject
-    private CustomerManager customerManager;
 
     public int getIdCustomer() {
         return idCustomer;
@@ -42,6 +48,7 @@ public class CustomerDetailsBean implements Serializable {
     /**
      * Retourne les détails du client courant (contenu dans l'attribut customer
      * de cette classe).
+     *
      * @return Customer
      */
     public Customer getCustomer() {
@@ -64,5 +71,14 @@ public class CustomerDetailsBean implements Serializable {
 
     public void loadCustomer() {
         this.customer = customerManager.findById(idCustomer);
+    }
+
+    /**
+     * Retourne la liste de tous les Discount.
+     *
+     * @return la liste des discounts
+     */
+    public List<Discount> getDiscounts() {
+        return discountManager.getAllDiscounts();
     }
 }
