@@ -1,4 +1,4 @@
-package mg.itu.mbds.m2.jakartaee.rasatasitraka45.tp1.resources;
+package mg.itu.rasatasitraka.tpcustomer.resources;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;

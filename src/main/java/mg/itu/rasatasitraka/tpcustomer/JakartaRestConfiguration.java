@@ -1,4 +1,4 @@
-package mg.itu.mbds.m2.jakartaee.rasatasitraka45.tp1;
+package mg.itu.rasatasitraka.tpcustomer;
 
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
