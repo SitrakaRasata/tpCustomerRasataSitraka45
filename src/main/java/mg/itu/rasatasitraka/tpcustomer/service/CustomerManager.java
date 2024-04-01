@@ -53,4 +53,8 @@ public class CustomerManager {
     public void persist(Customer customer) {
         em.persist(customer);
     }
+
+    public Customer findById(int idCustomer) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
