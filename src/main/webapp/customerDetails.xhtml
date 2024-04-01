@@ -18,7 +18,8 @@
     <h:body>
         <f:view>
             <h:messages/>
-            <h:form>
+            <h:outputText value="Aucun client avec l'id #{customerDetailsBean.idCustomer} !" rendered='#{customerDetailsBean.customer == null}'/>
+            <h:form rendered='#{customerDetailsBean.customer != null}'>
                 <h1><h:outputText value="Create/Edit"/></h1>
                 <h:panelGrid columns="2">
                     <h:outputLabel value="CustomerId:" for="customerId" />
